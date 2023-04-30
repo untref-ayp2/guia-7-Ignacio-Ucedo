@@ -37,6 +37,9 @@ func TestEjercicio05(t *testing.T) {
 	pila.Push(3)
 
 	assert.Equal(t, 3, CantidadDeElementos(pila))
+	// pila.Pop()
+	v, _ := pila.Top()
+	assert.Equal(t, 3, v)
 }
 
 func TestEjercicio06(t *testing.T) {
@@ -101,8 +104,8 @@ func TestEjercicio13(t *testing.T) {
 }
 
 func TestEjercicio14(t *testing.T) {
-	assert.True(t, SumaElementos([]int{7, 4, 6, 8}, []int{3, 1, 6, 6}, 7))
-	assert.False(t, SumaElementos([]int{7, 4, 6, 8}, []int{3, 1, 6, 6}, 2))
+	assert.True(t, SumaElementos([]int{7, 4, 6, 8}, []int{1, 3, 6, 6}, 7))
+	assert.False(t, SumaElementos([]int{7, 4, 6, 8}, []int{1, 3, 6, 6}, 2))
 
 	assert.True(t, SumaElementos([]int{1, 2, 3, 4, 5}, []int{1, 2, 3, 4, 5}, 4))
 	assert.False(t, SumaElementos([]int{1, 2, 3, 4, 5}, []int{1, 2, 3, 4, 5}, 11))

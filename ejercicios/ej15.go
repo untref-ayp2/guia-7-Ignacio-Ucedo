@@ -7,5 +7,19 @@ package ejercicios
 // Se pide implementar un algoritmo de división y conquista de orden
 // O(log n) que encuentre la posición p del pico.
 func Pico(arreglo []int) int {
-	panic("Not implemented")
+
+	if len(arreglo) == 1 {
+		return 0
+	}
+
+	medio := len(arreglo) / 2
+	mitad := arreglo[:medio]
+
+	if arreglo[medio-1] > arreglo[medio] {
+		return Pico(mitad)
+	}
+
+	mitad = arreglo[medio:]
+	return Pico(mitad) + medio
+
 }
